@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,22 +20,26 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
+      padding: 16px;
     }
     .card {
       width: 100%;
       max-width: 420px;
       background: #171717;
       border: 1px solid #332d18;
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.85);
       text-align: center;
     }
+    .poster-img {
+      width: 100%;
+      display: block;
+      border-bottom: 2px solid #d4af37;
+    }
     .header-banner {
-      background: linear-gradient(180deg, #2a2012 0%, #171717 100%);
-      padding: 28px 16px 16px;
-      border-bottom: 1px solid #2e2613;
+      padding: 20px 16px 12px;
+      background: #171717;
     }
     .badge {
       display: inline-block;
@@ -48,43 +53,42 @@
       margin-bottom: 10px;
     }
     h1 {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       color: #ffffff;
       text-transform: uppercase;
     }
     h2 {
-      font-size: 16px;
+      font-size: 15px;
       color: #d4af37;
-      margin-top: 6px;
+      margin-top: 4px;
       font-weight: 600;
-      letter-spacing: 1px;
     }
     .content {
-      padding: 20px;
+      padding: 16px 20px 24px;
     }
     .contact-item {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      font-size: 14px;
-      color: #cccccc;
+      gap: 8px;
+      font-size: 13px;
+      color: #bbbbbb;
       margin-bottom: 16px;
     }
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       width: 100%;
-      padding: 14px;
-      margin-bottom: 12px;
+      padding: 13px;
+      margin-bottom: 10px;
       border-radius: 10px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
+      font-weight: 700;
+      font-size: 14px;
       transition: all 0.2s ease;
     }
     .btn-primary {
@@ -96,17 +100,27 @@
       color: #ffffff;
       border: 1px solid #333333;
     }
+    .btn-save {
+      background: transparent;
+      color: #d4af37;
+      border: 1px solid #d4af37;
+      cursor: pointer;
+    }
+    .btn:active {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
     .social-row {
       display: flex;
       justify-content: center;
-      gap: 16px;
-      margin-top: 20px;
+      gap: 18px;
+      margin-top: 16px;
       padding-top: 16px;
-      border-top: 1px solid #242424;
+      border-top: 1px solid #282828;
     }
     .social-row a {
       color: #d4af37;
-      font-size: 24px;
+      font-size: 22px;
       text-decoration: none;
     }
   </style>
@@ -114,11 +128,13 @@
 <body>
 
   <div class="card">
+    <!-- Band Artwork Poster -->
+    <img src="1791830071731.jpg" alt="Grupo Asalto" class="poster-img">
+
     <div class="header-banner">
       <div class="badge">Regio Mex Music Group</div>
-      <h1>Grupo Asalto</h1>
-      <h2>Fernando Sánchez Flores</h2>
-      <p style="font-size: 12px; color: #888888; margin-top: 4px;">Booking & Representación</p>
+      <h1>Fernando Sánchez Flores</h1>
+      <h2>Booking & Representación</h2>
     </div>
 
     <div class="content">
@@ -127,31 +143,69 @@
         <span>3106 West Ave, San Antonio, TX 78213</span>
       </div>
 
+      <!-- Action Buttons -->
       <a href="tel:2103850515" class="btn btn-primary">
         <i class="fa-solid fa-phone"></i> Llamar (210) 385-0515
       </a>
 
       <a href="https://wa.me/12103850515?text=Hola,%20me%20gustar%C3%ADa%20informaci%C3%B3n%20para%20contrataciones%20de%20Grupo%20Asalto" class="btn btn-secondary">
-        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> Enviar WhatsApp
+        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Directo
       </a>
 
       <a href="mailto:fersan17@gmail.com?subject=Contrataciones%20Grupo%20Asalto" class="btn btn-secondary">
         <i class="fa-solid fa-envelope"></i> Enviar Correo
       </a>
 
+      <a href="https://grupoasalto.com" target="_blank" class="btn btn-secondary">
+        <i class="fa-solid fa-globe"></i> Visitar Sitio Web Oficial
+      </a>
+
+      <button class="btn btn-save" onclick="downloadVCard()">
+        <i class="fa-solid fa-address-card"></i> Guardar en Contactos (.vcf)
+      </button>
+
+      <!-- Verified Social Media Icons -->
       <div class="social-row">
-        <a href="https://instagram.com/grupo_asalto_oficial" target="_blank" aria-label="Instagram">
+        <a href="https://instagram.com/somosgrupoasalto" target="_blank" aria-label="Instagram">
           <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://facebook.com/grupoasalto" target="_blank" aria-label="Facebook">
+        <a href="https://facebook.com/somosgrupoasalto" target="_blank" aria-label="Facebook">
           <i class="fa-brands fa-facebook"></i>
         </a>
-        <a href="https://tiktok.com/@grupoasalto" target="_blank" aria-label="TikTok">
+        <a href="https://tiktok.com/@officialasalto" target="_blank" aria-label="TikTok">
           <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://youtube.com/@SomosGrupoAsalto" target="_blank" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
         </a>
       </div>
     </div>
   </div>
+
+  <script>
+    function downloadVCard() {
+      const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:Sánchez Flores;Fernando;;;
+FN:Fernando Sánchez Flores - Grupo Asalto
+ORG:Regio Mex Music Group;Grupo Asalto
+TITLE:Booking & Management
+TEL;TYPE=CELL,VOICE:(210) 385-0515
+EMAIL;TYPE=INTERNET,PREF:fersan17@gmail.com
+URL:https://grupoasalto.com
+ADR;TYPE=WORK:;;3106 West Ave;San Antonio;TX;78213;USA
+X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/somosgrupoasalto
+X-SOCIALPROFILE;TYPE=facebook:https://facebook.com/somosgrupoasalto
+X-SOCIALPROFILE;TYPE=tiktok:https://tiktok.com/@officialasalto
+X-SOCIALPROFILE;TYPE=youtube:https://youtube.com/@SomosGrupoAsalto
+END:VCARD`;
+      const blob = new Blob([vcard], { type: 'text/vcard' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Fernando_Sanchez_Flores_Grupo_Asalto.vcf';
+      link.click();
+    }
+  </script>
 
 </body>
 </html>
